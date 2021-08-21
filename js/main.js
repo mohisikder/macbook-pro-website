@@ -38,18 +38,36 @@ function calculateUpdateTotal(){
    // Show the sub total in html
    document.getElementById('grand-total').innerText = total
    
-}
-// Promo Code
+   // Promo Code
    const promoInputValue = document.getElementById('coupon-btn')
    promoInputValue.addEventListener('click', function(){
       const promoInputText = document.getElementById('coupon-code').value
       
    const promoCode = 'stevekaku'
    if(promoInputText === promoCode){
-      const discount = calculateUpdateTotal() / Number(20)
-      console.log(discount)
+      const discount = total / 20
+      
    }
 })
+}
+
+// mmmmii
+function validate(coupon) {
+   var myRe = "LUCKY100";
+   var coupon = myRe.trim();
+   var input = document.getElementById('in').value;
+   if(input.toUpperCase() == coupon.toUpperCase()) {
+       document.getElementById('message').innerHTML="Coupon applied!";
+       document.getElementById('err').innerHTML="";
+       return true;
+   } else {
+       document.getElementById('err').innerHTML="Invalid coupon";
+       document.getElementById('message').innerHTML="";
+       return false;
+   }
+}
+// mojia09
+
 
 
 // Memory 

@@ -27,7 +27,7 @@
             <button id="twenty-cost" class="btn btn-secondary">512GB SSD storage</button>
             <button id="fifty-cost" class="btn btn-secondary">1TB SSD storage</button>
             <!-- Delivery -->
-            <h4 class="mt-4">Delivery</h4>
+            <h4 class="mt-4">Choose your delivery option </h4>
             <button id="free-delivery" class="btn btn-secondary">Friday, Aug 25 FREE Prime Delivery</button>
             <button id="express-delivery" class="btn btn-secondary">Friday, Aug 21 Delivery charge $20</button>
             <br>
@@ -61,6 +61,14 @@
                   </tfoot>
                </table>
             </div>
+            <!-- Another Promo -->
+            <form onsubmit="">
+               <label style="width:50px;"><input type="text" name="coupon" id="in" class="coupon" title="Enter coupon" >
+               <span id="usernameError"></span></label>
+               <input type="button" value="Submit" onClick="validate(coupon)" /></form>
+               
+               <span id="message"></span>
+               <span id="err"></span>
             <!-- Promo Code -->
             <p class="mt-2">Add Promo code</p>
             <input class="form-control w-50 d-inline" type="text" name="" id="coupon-code">
