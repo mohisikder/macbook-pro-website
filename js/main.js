@@ -33,34 +33,36 @@ function calculateUpdateTotal(){
    // Show the sub total in html
    document.getElementById('sub-total').innerText = subTotal
 
+   // Grand Total
+   const total = subTotal
+   // Show the sub total in html
+   document.getElementById('grand-total').innerText = total
+   
 }
-
 // Promo Code
-const promoCoupon = document.getElementById('coupon-btn')
-promoCoupon.addEventListener('click', function(){
-   const couponCode = document.getElementById('coupon-code').value
-   if(promoCoupon == 'stivekaku'){
+   const promoInputValue = document.getElementById('coupon-btn')
+   promoInputValue.addEventListener('click', function(){
+      const promoInputText = document.getElementById('coupon-code').value
       
+   const promoCode = 'stevekaku'
+   if(promoInputText === promoCode){
+      const discount = calculateUpdateTotal() / Number(20)
+      console.log(discount)
    }
-   console.log(discount)
-   console.log(couponCode)
 })
-function promoCode(){
-   
-   
-}
+
 
 // Memory 
-const defaultMemoryPrice = document.getElementById('default-cost')
+const minimumMemoryPrice = document.getElementById('default-cost')
 const extraMemoryPrice = document.getElementById('extra-cost')
 // get the 
 const memoryCost = document.getElementById('memory-extra-cost')
 
 // Event Listener and function of Memory
-defaultMemoryPrice.addEventListener('click', function(){
-   const defaultMemoryCost = parseInt(0)
+minimumMemoryPrice.addEventListener('click', function(){
+   const minimumMemoryCost = parseInt(0)
    // Show the value in html
-   memoryCost.innerText = defaultMemoryCost
+   memoryCost.innerText = minimumMemoryCost
    calculateUpdateTotal()
 })
 extraMemoryPrice.addEventListener('click', function(){
@@ -71,16 +73,16 @@ extraMemoryPrice.addEventListener('click', function(){
 })
 
 // Storage 
-const defaultStoragePrice = document.getElementById('default-ssd-cost')
+const minimumStoragePrice = document.getElementById('default-ssd-cost')
 const extraTwenty = document.getElementById('twenty-cost')
 const extraFifty = document.getElementById('fifty-cost')
 // get the 
 const storageCost = document.getElementById('extra-storage-cost')
 // Event Listener and function of Storage
-defaultStoragePrice.addEventListener('click', function(){
-   const defaultStorageCost = parseInt(0)
+minimumStoragePrice.addEventListener('click', function(){
+   const minimumStorageCost = parseInt(0)
    // Show the value in html
-   storageCost.innerText = defaultStorageCost
+   storageCost.innerText = minimumStorageCost
    calculateUpdateTotal()
 })
 extraTwenty.addEventListener('click', function(){
@@ -111,7 +113,7 @@ freeDelivery.addEventListener('click', function(){
    calculateUpdateTotal()
 })
 expressDelivery.addEventListener('click', function(){
-   const expressShippingCost = 30
+   const expressShippingCost = 20
    // Show the value in html
    deliveryCost.innerText = expressShippingCost
    calculateUpdateTotal()
