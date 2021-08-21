@@ -22,7 +22,7 @@
 const defaultPrice = document.getElementById('default-price').innerText
 
 // Update Total
-function calculateUpdateTotal(){
+function calculateUpdateTotal(num){
    const productPrice = Number(defaultPrice)
    const memoryPrice = Number(memoryCost.innerText)
    const storagePrice = Number(storageCost.innerText)
@@ -38,18 +38,20 @@ function calculateUpdateTotal(){
    // Show the sub total in html
    document.getElementById('grand-total').innerText = total
    
+}
    // Promo Code
    const promoInputValue = document.getElementById('coupon-btn')
    promoInputValue.addEventListener('click', function(){
       const promoInputText = document.getElementById('coupon-code').value
+      promoInputText.value = ''
+      if(promoInputText == 'stevekaku'){
+         const discount =Number(calculateUpdateTotal() / 20)
+         return discount
+      }else{
+         console.log('Coupon Code is Invalid')
+      }
       
-   const promoCode = 'stevekaku'
-   if(promoInputText === promoCode){
-      const discount = total / 20
-      
-   }
 })
-}
 
 // Memory 
 const minimumMemoryPrice = document.getElementById('default-cost')
